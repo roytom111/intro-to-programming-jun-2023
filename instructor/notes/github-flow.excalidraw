@@ -639,11 +639,15 @@
       "baseline": 18
     },
     {
+      "id": "6wm4p0nlDxqa4Rxy421xR",
       "type": "rectangle",
-      "version": 32,
-      "versionNonce": 1359647902,
-      "isDeleted": false,
-      "id": "fFNMcPI730Gy4vy9c0rEh",
+      "x": 423,
+      "y": 771,
+      "width": 320,
+      "height": 16,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "#7950f2",
       "fillStyle": "hachure",
       "strokeWidth": 1,
       "strokeStyle": "solid",
@@ -661,7 +665,11 @@
       "roundness": {
         "type": 3
       },
-      "boundElements": [],
+      "seed": 1765403778,
+      "version": 32,
+      "versionNonce": 1359647902,
+      "isDeleted": false,
+      "boundElements": null,
       "updated": 1687189215318,
       "link": null,
       "locked": false
@@ -909,8 +917,7 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "sync fork on\nGithub.com",
-      "lineHeight": 1.25,
-      "baseline": 43
+      "lineHeight": 1.25
     }
   ],
   "appState": {
