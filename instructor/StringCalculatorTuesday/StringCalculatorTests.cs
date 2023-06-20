@@ -27,6 +27,9 @@ public class StringCalculatorTests
 
     [Theory]
     [InlineData("1,2", 3)]
+    [InlineData("2,2", 4)]
+    [InlineData("10,8", 18)]
+    [InlineData("108,32", 140)]
     public void TwoDigits(string numbers, int expected)
     {
         var result = _calculator.Add(numbers);
