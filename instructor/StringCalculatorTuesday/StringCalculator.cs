@@ -1,4 +1,6 @@
 ﻿
+using System.Globalization;
+
 namespace StringCalculator;
 
 public class StringCalculator
@@ -7,15 +9,15 @@ public class StringCalculator
     public int Add(string numbers)
     {
         if (numbers == "") { return 0; }
-        if(numbers.Contains(','))
-        {
-            var idx = numbers.IndexOf(',');
-            var lhs = int.Parse(numbers.Substring(0, idx));
-            var rhs = int.Parse(numbers.Substring(idx + 1));
+        var delimeters = new List<char> { ',', '\n' };
+        if(numbers.StartsWith("//")) {
 
-            return lhs + rhs;
+            var customDelimeter = numbers.Substring(2, 1);
+            delimeters.Add(char.Parse(customDelimeter));
+            numbers = numbers.Substring(4);
         }
-        return int.Parse(numbers);
+       
+        return numbers.Split(delimeters.ToArray()).Select(int.Parse).Sum();
         
     }
 }
