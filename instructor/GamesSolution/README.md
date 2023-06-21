@@ -2,12 +2,34 @@
 
 ## Bowling Game:
 
+We are writing code to calculate a report on a bowling game between two or more players.
+
+So, after they are done playing, they tell us the names and scores of each of the players, and we calculate:
+
+- Who are the winners.
+- Who are the losers.
+- What is the average of all the scores.
+
+
 | Name | Score |
 | ---- | ----- |
 | Jim  | 120   |
 | Sue  | 286   |
+| Sam  | 180   |
 | Ray  | 286   |
 | Paul | 120   |
+
+
+Output for this ame would be something like:
+
+### Winners
+    - Sue, 286
+    - Ray, 286
+### Losers
+    - Jim, 120
+    - Paul, 120
+## Average 
+    - 198.4
 
 
 ## Some Rules
