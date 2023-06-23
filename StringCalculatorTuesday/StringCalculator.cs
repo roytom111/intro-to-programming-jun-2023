@@ -1,26 +1,50 @@
 ﻿
-using System.ComponentModel.Design;
-
 namespace StringCalculator;
 
 public class StringCalculator
 {
 
-    public int Add(string numbers, string num2)
+    private readonly ILogger _logger;
+    private readonly IWebService _webService;
+
+
+    public StringCalculator(ILogger logger, IWebService webService)
     {
-        if (numbers == "" && num2 == "")
-        {
-            return 0;
+        _logger = logger;
+        _webService = webService;
+    }
 
+    public int Add(string numbers)
+    {
+        int result = 0;
+
+        if (numbers == "")
+        {
+            result = 0; 
         }
-        else 
+        else
         {
-            var num1 = int.Parse(numbers);
-            var nums = int.Parse(num2);
-          
-            return num1 +nums;
 
-        } 
+            result = numbers.Split(',', '\n').Select(int.Parse).Sum();
+        }
+        try
+        {
+
+        _logger.Write(result.ToString());
+        }
+        catch(Exception) 
+        {
+            _webService.Notify("Error writing to logger");
+        }
+        return result;
     }
 }
-    
+
+public interface ILogger
+{
+    void Write(string message);
+}
+public interface IWebService
+{
+    void Notify(string message);
+}

@@ -1,17 +1,26 @@
 ﻿
-
-namespace CsharpStuff;
-
+namespace CSharpStuff;
 public class BankAccount
 {
 
+    public BankAccount(string email)
+    {
+        Email = email;
+    }
     private decimal _balance = 5000M;
-    private string _email = "";
+
+    public string Email { get; private set; } = string.Empty;
 
 
-    public string Email 
-    { get { return _email; }
-      set { _email = value; }
+    public string PhoneNumber { get; set; } = "";
+    public decimal GetBalance()
+    {
+        return _balance;
+    }
+
+    public decimal Balance
+    {
+        get { return _balance; }
     }
 
     public void Deposit(decimal amount)
@@ -19,8 +28,12 @@ public class BankAccount
         _balance += amount;
     }
 
-    public decimal GetBalance()
+    public void Withdraw(decimal amount)
     {
-        return _balance;
+        _balance -= amount;
     }
+
+
 }
+
+
