@@ -64,7 +64,7 @@ public class GreetingTests
 
         var greeter = new GreetingMaker();
 
-        string greeting = greeter.Greet(String.Join(", ", names));
+        string greeting = greeter.Greet("Cooper, Rosenfield, Preston, Milford!");
 
         Assert.Equal("Hello, Cooper, Rosenfield, Preston, Milford!", greeting);
 

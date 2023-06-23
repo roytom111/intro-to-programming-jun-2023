@@ -19,7 +19,7 @@
             }
             return $"Hello, {name}";
         }
-        public string Greet(string name, string name2, params string[] names)
+        public string Greet(string name, string name2)
         {
            
                 
@@ -28,14 +28,13 @@
         }
         public string Greet( params string[] names)
         {
-           
-            
-                //return $"Hello, {String.Join(",", names)}!";
-
-                return (String.Join(", ", names));
 
 
-           
+            return $"Hello, {String.Join(",", names)}!";
+
+
+
+
         }
 
     }
